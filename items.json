@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Kuta Utara, Endonezya bölgesinde oda",
+    "location": "Kuta Utara, Endonezya",
+    "rating": "4,89",
+    "price": {
+      "currency": "₺",
+      "value": 1327
+    },
+    "amenities": [
+      "Yatak odası kapısında kilit",
+      "Mutfak",
+      "Wifi",
+      "Özel çalışma alanı",
+      "Binada ücretsiz otopark",
+      "Klima",
+      "Buzdolabı",
+      "Kahvaltı"
+    ],
+    "cover": "https://a0.muscache.com/im/pictures/1ab974d8-f76a-4235-99c5-5ff77b012c3b.jpg?im_w=720",
+    "images": [
+      "https://a0.muscache.com/im/pictures/1b0dc34a-7106-4173-887d-afbbe05b9a5d.jpg?im_w=720",
+      "https://a0.muscache.com/im/pictures/f2f040ae-7e40-4428-8dbe-1bb09737c91a.jpg?im_w=720",
+      "https://a0.muscache.com/im/pictures/2794002e-adc2-43b6-aedd-fd26b9d5dfe7.jpg?im_w=720",
+      "https://a0.muscache.com/im/pictures/1194c207-fc07-4b08-81d1-cd372665dbdb.jpg?im_w=720"
+    ],
+    "rooms": [
+      "1 çift kişilik yatak",
+      "Ortak banyo"
+    ],
+    "url": "https://www.airbnb.com.tr/rooms/20787557?adults=1&category_tag=Tag%3A8661&children=0&enable_m3_private_room=true&infants=0&pets=0&photo_id=1111775355&search_mode=flex_destinations_search&check_in=2024-06-14&check_out=2024-06-19&source_impression_id=p3_1716227580_qD2RKf%2Fuh2wUQuMr&previous_page_section_name=1000&federated_search_id=50e59416-25ac-4561-8ac7-c78e02d46874"
+  },
+  {
+    "title": "Strathpeffer, Birleşik Krallık bölgesinde oda",
+    "location": "Strathpeffer, Birleşik Krallık",
+    "rating": "4,93",
+    "price": {
+      "currency": "₺",
+      "value": 1802
+    },
+    "amenities": [
+      "Wifi",
+      "Özel çalışma alanı",
+      "Binada ücretsiz otopark",
+      "Evcil hayvan kabul edilir",
+      "TV",
+      "Çamaşır makinesi",
+      "Kurutma makinesi",
+      "Arka bahçe",
+      "Şömine"
+    ],
+    "cover": "https://a0.muscache.com/im/pictures/37240604/e1711e39_original.jpg?im_w=720",
+    "images": [
+      "https://a0.muscache.com/im/pictures/37240675/c3bc441a_original.jpg?im_w=720",
+      "https://a0.muscache.com/im/pictures/37240702/a2beead0_original.jpg?im_w=720",
+      "https://a0.muscache.com/im/pictures/41221234/aa5d6184_original.jpg?im_w=720",
+      "https://a0.muscache.com/im/pictures/37240889/8c2b5483_original.jpg?im_w=720"
+    ],
+    "rooms": [
+      "1 yatak odası",
+      "Ortak banyo"
+    ],
+    "url": "https://www.airbnb.com.tr/rooms/2881352?adults=1&category_tag=Tag%3A8661&children=0&enable_m3_private_room=true&infants=0&pets=0&photo_id=23724223&search_mode=flex_destinations_search&check_in=2024-08-25&check_out=2024-08-30&source_impression_id=p3_1716227580_LHu23D0GJ3IpSiIh&previous_page_section_name=1000&federated_search_id=50e59416-25ac-4561-8ac7-c78e02d46874"
+  }
+]
