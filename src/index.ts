@@ -3,6 +3,7 @@ import fs from "fs";
 
 (async () => {
   const browser = await puppeteer.launch({
+    headless: false,
     defaultViewport: {
       width: 1920,
       height: 1080,
@@ -12,7 +13,7 @@ import fs from "fs";
   const page = await browser.newPage();
 
   await page.goto(
-    "https://www.airbnb.com/?tab_id=home_tab&search_mode=flex_destinations_search&flexible_trip_lengths%5B%5D=one_week&location_search=MIN_MAP_BOUNDS&monthly_start_date=2024-06-01&monthly_length=3&monthly_end_date=2024-09-01&price_filter_input_type=0&channel=EXPLORE&category_tag=Tag:8661&search_type=filter_change&price_filter_num_nights=5&l2_property_type_ids%5B%5D=4&price_max=150"
+    "https://www.airbnb.com/?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&search_mode=flex_destinations_search&flexible_trip_lengths%5B%5D=one_week&location_search=MIN_MAP_BOUNDS&monthly_start_date=2024-06-01&monthly_length=3&monthly_end_date=2024-09-01&price_filter_input_type=0&channel=EXPLORE&category_tag=Tag%3A8661&search_type=category_change&currency=USD&enable_auto_translate=false&locale=en&country_override=US"
   );
 
   const itemsSelector = "[data-testid='card-container']";
@@ -32,9 +33,11 @@ import fs from "fs";
   const amenitiesSelector =
     "div.c16f2viy.atm_9s_1txwivl.atm_h_1fhbwtr.atm_fc_1y6m0gg.atm_be_1g80g66.atm_gz_1xo9vth.atm_h0_1xo9vth.atm_vy_1pz0x4r.atm_gz_1xo9vth__kgj4qw.atm_h0_1xo9vth__kgj4qw.atm_vy_1pz0x4r__kgj4qw.atm_gz_gsbcly__oggzyc.atm_h0_gsbcly__oggzyc.atm_vy_1mqvw0v__oggzyc.atm_gz_gsbcly__1v156lz.atm_h0_gsbcly__1v156lz.atm_vy_1mqvw0v__1v156lz.atm_gz_gsbcly__qky54b.atm_h0_gsbcly__qky54b.atm_vy_1mqvw0v__qky54b.atm_gz_gsbcly__jx8car.atm_h0_gsbcly__jx8car.atm_vy_1mqvw0v__jx8car.dir.dir-ltr div._19xnuo97";
 
-  await page.waitForSelector(itemsSelector);
+  await page.waitForSelector(
+    "div.gsgwcjk.atm_1d13e1y_p5ox87.atm_yrukzc_1od0ugv.atm_10yczz8_kb7nvz.atm_10yczz8_cs5v99__1ldigyt.atm_10yczz8_11wpgbn__1v156lz.atm_10yczz8_egatvm__qky54b.atm_10yczz8_qfx8er__1xolj55.atm_10yczz8_ouytup__w5e62l.g14v8520.atm_9s_11p5wf0.atm_d5_j5tqy.atm_d7_1ymvx20.atm_dl_1mvrszh.atm_dz_hxz02.dir.dir-ltr > div:nth-child(10)"
+  );
   const itemUrlAndLocation = await page.$$eval(itemsSelector, (els) => {
-    return els.slice(0, 2).map((el) => {
+    return els.slice(0, 5).map((el) => {
       const itemUrlSelector =
         "[data-testid='card-container'] a.l1ovpqvx[href^='/rooms/']";
       const locationSelector = "[data-testid='listing-card-title']";
@@ -50,7 +53,7 @@ import fs from "fs";
     await page.goto(url, {
       waitUntil: "networkidle2",
     });
-    await page.waitForSelector(priceSelector, { timeout: 15000 });
+    await page.waitForSelector(priceSelector, { timeout: 1000000 });
     await Promise.race([
       page.waitForSelector(ratingSelector),
       page.waitForSelector(ratingSelector2),
@@ -118,7 +121,7 @@ import fs from "fs";
   };
 
   const items = itemUrlAndLocation.map(async (item) => {
-    item.url = `https://www.airbnb.com.tr${item.url}`;
+    item.url = `https://www.airbnb.com${item.url}`;
     return await getHotelDetails(item.url, item.location);
   });
 
